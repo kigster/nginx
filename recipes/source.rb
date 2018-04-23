@@ -57,7 +57,7 @@ end
 
 node.run_state['nginx_force_recompile'] = false
 node.run_state['nginx_configure_flags'] =
-  node['nginx']['source']['default_configure_flags'] | node['nginx']['configure_flags']
+  node['nginx']['source']['default_configure_flags'] || node['nginx']['configure_flags']
 node.run_state['nginx_source_env'] = {}
 
 include_recipe 'nginx::commons_conf'
